@@ -9,7 +9,7 @@
         alert("Invalid input");
         continue;
       }
-      (game[Math.floor((move - 1) / 3)][(move - 1) % 3] = playerTurn + 1);
+      game[Math.floor((move - 1) / 3)][(move - 1) % 3] = playerTurn + 1;
       if (option === "1") {
         if (winner = checkWinner(game)) break;
         if (!moveIndex) break;
@@ -19,7 +19,7 @@
     }
     alert(`Game Over\n\n ${c(game[0][0])}|${c(game[0][1])}|${c(game[0][2])}\n ${c(game[1][0])}|${c(game[1][1])}|${c(game[1][2])}\n ${c(game[2][0])}|${c(game[2][1])}|${c(game[2][2])}\n\n${winner ? "Player " + (option === "1" ? winner || 2 : (playerTurn ^ 1) + 1) + " Wins" : "Tie"}`);
   } else if (option === "3") {
-    alert(`-The board on the right containing the numbers is a map of which numbers corrospond to locations on the board\n-Type the number that corrosponds with the move you wish to make and press enter or click "ok"\n-A new pop-up box will appear displaying your move\n-If at any time you want to cancel, click cancel`) && start();
+    alert(`-The board on the right containing the numbers is a map of which numbers corrospond to locations on the board\n-Type the number that corrosponds with the move you wish to make and press enter or click "ok"\n-A new pop-up box will appear displaying your move\n-If at any time you want to cancel, click cancel`) || start();
   } else if (option !== null) alert("Invalid input") || start();
   function checkWinner(game) {
     for (let i = 0; i < 6; i++) {
